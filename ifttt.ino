@@ -1,15 +1,13 @@
 int photoresistor = A5;
-int lightValue = 0;
-bool isLight = false;
+bool isLight;
 
 void setup() {
   pinMode(photoresistor, INPUT);
-  Particle.variable("lightValue", lightValue);
 }
 
 void loop() {
     // read light data
-    lightValue = analogRead(photoresistor);
+    int lightValue = analogRead(photoresistor);
     
     // if in sunlight
     if (lightValue > 40) {
